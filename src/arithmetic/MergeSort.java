@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class MergeSort {
     public static void main(String[] args) {
-        int[] nums = new int[10];
+        int[] nums = new int[6];
         putValue(nums);
         print(nums);
         mergeSort(nums,0, nums.length - 1);
@@ -66,6 +66,12 @@ public class MergeSort {
         }
     }
 
+    /**
+     * 合并数组
+     * @param nums
+     * @param start
+     * @param end
+     */
     public static void mergeSort(int[] nums, int start, int end){
         if (start < end){
             int mid = (start + end) >> 1;
