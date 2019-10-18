@@ -66,6 +66,11 @@ class Solution1{
         return sum;
     }
 
+    /**
+     * 数字转二进制
+     * @param num
+     * @return
+     */
     public static String toBinary(int num){
         if (num == 0){
             return "0";
