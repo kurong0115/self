@@ -6,6 +6,13 @@ public class ListNode {
     ListNode(int x) { val = x; }
 }
 class Solution1{
+
+    /**
+     * 两个链表相加
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode root = new ListNode(0);
         ListNode cur = root;
@@ -34,6 +41,12 @@ class Solution1{
         return cur.next;
     }
 
+    /**
+     * 二进制相加
+     * @param a
+     * @param b
+     * @return
+     */
     public static String addBinary(String a, String b) {
         StringBuilder sb = new StringBuilder();
         int num = 0;
@@ -56,6 +69,11 @@ class Solution1{
         return sb.reverse().toString();
     }
 
+    /**
+     * 二进制字符串转数字
+     * @param a
+     * @return
+     */
     public static int toNum(String a){
         int sum = 0;
         for (int i = a.length() - 1; i >= 0; i--){

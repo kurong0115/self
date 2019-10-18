@@ -2,6 +2,9 @@ package arithmetic;
 
 import java.util.Random;
 
+/**
+ * 归并排序
+ */
 public class MergeSort {
     public static void main(String[] args) {
         int[] nums = new int[10];
@@ -11,6 +14,10 @@ public class MergeSort {
         print(nums);
     }
 
+    /**
+     * 随机往数组中添加值
+     * @param nums
+     */
     public static void putValue(int[] nums){
         Random r = new Random();
         for (int i = 0; i < nums.length; i++){
@@ -18,6 +25,10 @@ public class MergeSort {
         }
     }
 
+    /**
+     * 打印数组中的值
+     * @param nums
+     */
     public static void print(int[] nums){
         for (int num: nums){
             System.out.print(num + "\t");
@@ -25,6 +36,12 @@ public class MergeSort {
         System.out.println();
     }
 
+    /**
+     * 合并两个数组
+     * @param nums
+     * @param start
+     * @param end
+     */
     public static void merge(int[] nums, int start, int end){
         int[] temp = new int[end - start + 1];
         int mid = (start + end) >> 1;
