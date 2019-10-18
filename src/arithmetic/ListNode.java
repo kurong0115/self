@@ -78,6 +78,12 @@ class Solution1{
         return sb.reverse().toString();
     }
 
+    /**
+     * 合并两个有序列表
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode root = new ListNode(0);
         ListNode cur = root;
