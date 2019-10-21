@@ -1,5 +1,8 @@
 package arithmetic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListNode {
     int val;
     ListNode next;
@@ -131,6 +134,44 @@ class Solution1{
             l2 = l2.next;
         }
         return cur.next;
+    }
+
+    public int[] nextLargerNodes(ListNode head) {
+        if (head == null)
+            return null;
+        List<Integer> list = new ArrayList<>();
+        ListNode tmp = null;
+        while (head != null){
+            int a = head.val;
+            tmp = (head.next == null)? null: head.next;
+            if (tmp == null){
+                list.add(0);
+                break;
+            }
+            do{
+                if (tmp.val > a){
+                    list.add(tmp.val);
+                    break;
+                } else{
+                    tmp = tmp.next;
+                    if (tmp == null){
+                        list.add(0);
+                    }
+                }
+            } while (tmp != null);
+            head = head.next;
+        }
+        return toArray(list);
+    }
+
+    public int[] toArray(List<Integer> list){
+        if (list == null)
+            return null;
+        int[] nums = new int[list.size()];
+        for (int i = 0; i < list.size(); i++){
+            nums[i] = list.get(i);
+        }
+        return nums;
     }
 
     public static void main(String[] args) {
