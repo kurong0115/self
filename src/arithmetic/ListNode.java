@@ -137,8 +137,9 @@ class Solution1{
     }
 
     public int[] nextLargerNodes(ListNode head) {
-        if (head == null)
+        if (head == null) {
             return null;
+        }
         List<Integer> list = new ArrayList<>();
         ListNode tmp = null;
         while (head != null){
@@ -165,13 +166,29 @@ class Solution1{
     }
 
     public int[] toArray(List<Integer> list){
-        if (list == null)
+        if (list == null) {
             return null;
+        }
         int[] nums = new int[list.size()];
         for (int i = 0; i < list.size(); i++){
             nums[i] = list.get(i);
         }
         return nums;
+    }
+
+    public static ListNode reverse(ListNode head){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode cur = new ListNode(0);
+        ListNode tmp = null;
+        while (head != null){
+            tmp = head.next;
+            head.next = cur.next;
+            cur.next = head;
+            head = tmp;
+        }
+        return cur.next;
     }
 
     public static void main(String[] args) {
@@ -198,22 +215,38 @@ class Solution1{
 //            System.out.println(root.val);
 //            root = root.next;
 //        }
-        System.out.println(toNum("1100"));
-        System.out.println(toBinary(1));
-
-        System.out.println(addBinary("11", "1"));
+//        System.out.println(toNum("1100"));
+//        System.out.println(toBinary(1));
+//
+//        System.out.println(addBinary("11", "1"));
+//
+//        ListNode l1 = new ListNode(1);
+//        ListNode l2 = new ListNode(2);
+//        ListNode l3 = new ListNode(3);
+//        ListNode l4 = new ListNode(1);
+//        ListNode l5 = new ListNode(2);
+//        ListNode l6 = new ListNode(4);
+//        l1.next = l2;
+//        l2.next = l3;
+//        l4.next = l5;
+//        l5.next = l6;
+//        ListNode root = mergeTwoLists(l1, l4);
+//        while (root != null){
+//            System.out.println(root.val);
+//            root = root.next;
+//        }
 
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(3);
-        ListNode l4 = new ListNode(1);
-        ListNode l5 = new ListNode(2);
-        ListNode l6 = new ListNode(4);
+        ListNode l4 = new ListNode(4);
+        ListNode l5 = new ListNode(5);
         l1.next = l2;
         l2.next = l3;
+        l3.next = l4;
         l4.next = l5;
-        l5.next = l6;
-        ListNode root = mergeTwoLists(l1, l4);
+
+        ListNode root = reverse(l1);
         while (root != null){
             System.out.println(root.val);
             root = root.next;
