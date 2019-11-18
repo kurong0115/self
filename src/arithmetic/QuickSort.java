@@ -31,9 +31,12 @@ public class QuickSort {
                 nums[high] = t;
             }
         }
-        if (low > start)
+        if (low > start){
             quickSort(nums, start, low - 1);
-        if (high < end)
+        }
+        if (high < end){
             quickSort(nums, high + 1, end);
+        }
+
     }
 }
