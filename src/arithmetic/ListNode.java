@@ -176,6 +176,24 @@ class Solution1{
         return nums;
     }
 
+	/**
+	 * 找出链表的中间结点
+	 * @param root
+	 * @return
+	 */
+	public static ListNode getMediumNode(ListNode root){
+    	if (root == null || root.next == null){
+    		return root;
+		}
+		ListNode p = root;
+    	ListNode q = root;
+    	while (p.next != null && q.next != null){
+    		p = p.next;
+    		q = q.next.next;
+		}
+		return p;
+	}
+
     public static ListNode reverse(ListNode head){
         if (head == null || head.next == null){
             return head;
@@ -246,7 +264,10 @@ class Solution1{
         l3.next = l4;
         l4.next = l5;
 
-        ListNode root = reverse(l1);
+		ListNode mediumNode = getMediumNode(l1);
+		System.out.println(mediumNode.val);
+
+		ListNode root = reverse(l1);
         while (root != null){
             System.out.println(root.val);
             root = root.next;
