@@ -1,6 +1,8 @@
 package arithmetic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class ListNode {
@@ -262,7 +264,9 @@ class Solution1{
         l1.next = l2;
         l2.next = l3;
         l3.next = l4;
-        l4.next = l5;
+//        l4.next = l5;
+
+		HashMap<String, Object> map = new LinkedHashMap();
 
 		ListNode mediumNode = getMediumNode(l1);
 		System.out.println(mediumNode.val);
