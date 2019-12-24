@@ -30,7 +30,8 @@ public class BucketSort {
 				max = num;
 			}
 		}
-		int partition = max / length;	// max = 50   partition = 5
+		// max = 50   partition = 5
+		int partition = max / length;
 		length = max / partition;
 		for (int i = 0; i <= length; i++){
 			List<Integer> c = new ArrayList<>();
