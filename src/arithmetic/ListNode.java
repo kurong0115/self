@@ -58,8 +58,8 @@ class Solution1{
         int i = a.length() - 1;
         int j = b.length() - 1;
         while (i >= 0 || j >= 0 || num > 0){
-            int a1 = (i >= 0)? Integer.valueOf(a.substring(i, i + 1)): 0;  //1 1
-            int b1 = (j >= 0)? Integer.valueOf(b.substring(j, j + 1)): 0;  //1 0
+            int a1 = (i >= 0)? Integer.valueOf(a.substring(i, i + 1)): 0;
+            int b1 = (j >= 0)? Integer.valueOf(b.substring(j, j + 1)): 0;
             int sum = a1 + b1 + num;
             if (sum >= 2){
                 sum -= 2;

@@ -19,12 +19,6 @@ public class ClimbStair {
     }
 
     public static int climbStairs(int n, String str){
-        if (n == 1){
-            return 1;
-        }
-        if (n == 2){
-            return 2;
-        }
         int[] nums = new int[n];
         nums[0] = 1;
         nums[1] = 2;
